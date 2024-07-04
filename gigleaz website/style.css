@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.header{
+    width: 100%;
+    color: rgb(227, 158, 19);
+    background-color: rgb(113, 111, 106);
+
+}
+
+.logo-gigleaz{
+}
+
+.header-links {
+
+    display:flex ;
+    /* justify-content: space-around; */
+    
+}
+
+.gigleaz-logoname{
+
+    
+}
+
+.gigleaz-logoname ul{
+    display: flex;
+
+
+}
+.gigleaz-logoname ul li a{
+    text-decoration: none;
+    color: aliceblue;
+
+}
+
+
+
+
+
+.gigleaz{
+    padding: 10px;
+    margin: 10px;
+}
+
+.nav-links{
+/* align-items:right;
+justify-content: space-between; */
+}
+.nav-links ul li{
+   list-style:none;
+    display: inline-block;
+    padding:10px;
+    margin: 10px;
+  
+}
+
+.nav-links ul li a{
+    text-decoration: none;
+    text-align:right;
+    color: aliceblue;
+
+}
+
+@media(max-width:700px){
+
+    .nav-links ul li{
+        display: block; /*list content coverted to verticle*/
+
+    }
+    .nav-links {
+        position: absolute;/*doubt*/
+        background-color: rgb(113, 111, 106);
+        height: 100vh;
+            width: 200px;
+        top: 0px;
+         right: -200px;/* move the z index of the side open menu bar to 0 */
+        text-align: left;
+        z-index: 2;/* displayes got prooritised !st*/
+        transition: 0.5s;
+    }
+    header-links.fa{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .nav-links ul{/*list is moved a little bit by adding padding*/
+        padding: 30px;
+    }
+}

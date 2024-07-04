@@ -1,0 +1,107 @@
+/* adding universal selector */
+*{
+    /* marging and padding will be applicable for all the html elements */
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;/* added font from google font*/
+}
+
+/* class name selector will be added with (dot) */
+.header{
+    min-height: 100vh;  /*vh is appliable for standard heiht irespective to backroung image height ,min height for the div*/
+    width: 100%;
+    /* background-image: linear-gradient(rgba(4,9,30,0,0.7),rgba(4,9,30,0,0.7)) ,url('Images/banner.png'); */
+    /* background-image: linear-gradient(rgba(4,9,30,0,0.7),rgba(4,9,30,0,0.7)),url(Images/background.jpg); */
+    background-image: url('Images/banner.png');
+    background-position: center;   /* image center lo radaniki  */
+    background-size: cover;
+    position: relative; /*avoid overlaping  */
+    filter: brightness(90%); /*reduce the britness of the backroung image */
+    /* filter: blur(1pDFx); it will blur the image */
+    
+    color: #f44336;
+}
+nav{
+    display:flex ; /*list elements will be moved from under the logo to the right of the logo*/
+    padding: 2% 6%; /* kept spaces from left to right 6& and top to bottom2% */
+    justify-content: space-between; /* content of list moved from on the logo to right corner*/
+    align-items: center;
+    /* background-color: aqua; */
+    color: #cdb0b0;
+}
+
+nav img{ 
+width: 100px; /* navigation logo size can be adjusted*/
+}
+
+.nav-links{
+    flex:auto ; /*doubt if we select flex to auto the content from right coming under the logo*/
+    text-align:right; /*all the content went to right side*/
+}
+
+.nav-links ul li{
+    list-style: none; /*  all the bullet point has been removed*/
+    display: inline-block; /* all the content in list changed to vertical in a single line*/
+    padding: 2px 6px; /* distance from top to bottom kept 2 px  and right to left kept 6px paddings*/
+    position: relative; /* doubt about position relative*/  
+}
+.nav-links ul li a {
+    color:#121111; /*kept colour for the font*/
+    text-decoration: none; /*removed underline from the contentent*/
+    font-size: 100%; /*decreased the size of the content*/
+}
+
+.nav-links ul li::after{ /*for using the underline effect*/
+    background: #f44336;
+    content: ''; /*doubt*/
+    width: 0%;/* width of the underline*/
+    height: 2px; /* thinkness of the underline */
+    display: block; /* it will display the underline if we add diplay block*/
+    margin: auto; /* doubt*/
+    transition: 0.5s; /*delay of underline when ther cursor is on the content*/
+}
+
+.nav-links ul li:hover::after{ /* for underline effect to come in nav elements when the cousor is brught on the nav bar*/
+    width: 100%; /* width of the underline in the alink*/
+}
+
+
+
+
+.hero-button:hover{
+border: 1px solid #978382;/*border color aslso changed o red to look the whole cor to red*/
+background: #a69695;
+transition: 0.5s;
+}
+nav .fa{ /* give space after nav to hide the icons from large screen and smaller screen*/
+    display: none;
+}
+
+@media(max-width:700px){
+    
+    .nav-links ul li{
+        display: block; /*list content coverted to verticle*/
+
+    }
+    .nav-links {
+        position: absolute;/*doubt*/
+        background: #a89d9c;
+        height: 100vh;
+        width: 200px;
+        top: 0px;
+        right: -200px; /* move the z index of the side open menu bar to 0*/
+        text-align: left;
+        z-index: 2;/* displayes got prooritised !st*/
+        transition: 0.5s;
+    }
+nav .fa{
+    display: block;
+    color: #e36d6d;
+    margin: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.nav-links ul{/*list is moved a little bit by adding padding*/
+    padding: 30px;
+}
+}
